@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#073b2c">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23087b48'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23e23139'/%3E%3C/svg%3E">
+  <title>Sylhet Sprint — Village Road Rush</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell" aria-label="Sylhet Sprint motorcycle game">
+    <canvas id="game" aria-label="Top-down village road game"></canvas>
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true"><span></span></div>
+      <div class="brand-copy"><strong>SYLHET<span> SPRINT</span></strong><small>VILLAGE ROAD RUSH</small></div>
+      <div class="top-spacer"></div>
+      <div class="best-pill"><span class="tiny-flag" aria-hidden="true"></span><div><small>BEST</small><strong id="bestScore">0000</strong></div></div>
+    </header>
+    <section class="game-hud" aria-live="polite">
+      <div class="score-box"><span class="hud-label">DISTANCE</span><strong id="score">0000</strong><span class="hud-unit">METERS</span></div>
+      <div class="speed-box"><div class="speed-icon">↗</div><div><span class="hud-label">SPEED</span><strong><span id="speed">48</span><small> km/h</small></strong></div></div>
+    </section>
+    <div class="lane-toast" id="laneToast">PASSING LEFT</div>
+
+    <section class="modal-screen" id="modalScreen" aria-live="polite">
+      <div class="modal-card" id="modalCard">
+        <div class="flag-lockup"><span class="flag"><i></i></span><span>MADE FOR THE OPEN ROAD</span></div>
+        <h1 id="modalTitle">Sylhet<br><em>Sprint</em></h1>
+        <p id="modalText">The tea gardens are calling.<br>Can you make it to the next village?</p>
+        <div class="vehicle-chips" aria-label="Watch out for traffic"><span>🛺 CNG</span><span>🛺 Rickshaw</span><span>🚌 Bus</span></div>
+        <button class="primary-btn" id="playButton"><span id="playLabel">START YOUR RIDE</span><span class="button-arrow">→</span></button>
+        <div class="howto"><span class="keycap">←</span><span class="keycap">→</span><span>or tap the road controls</span></div>
+      </div>
+      <div class="crash-stamp" id="crashStamp">RIDE ENDED</div>
+    </section>
+
+    <div class="controls" aria-label="Steering controls">
+      <button class="steer-btn" id="leftButton" aria-label="Steer left"><span class="steer-arrow">‹</span><span class="steer-word">LEFT</span></button>
+      <div class="controls-hint"><span class="hint-dot"></span> TAP TO STEER</div>
+      <button class="steer-btn" id="rightButton" aria-label="Steer right"><span class="steer-arrow">›</span><span class="steer-word">RIGHT</span></button>
+    </div>
+    <div class="corner-note"><span class="note-sun">✳</span> A ride through green Sylhet</div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
